@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>クリックで四角を表示</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        #popupBox {
+            width: 200px;
+            height: 100px;
+            background-color: lightblue;
+            border: 2px solid #000;
+            display: none;
+            margin: 20px auto;
+            padding: 10px;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button id="toggleButton">クリックして表示</button>
+    <div id="popupBox" class="hidden">
+        <p>これはポップアップです！</p>
+    </div>
+</div>
+
+<script>
+    document.getElementById("toggleButton").addEventListener("click", function() {
+        var popupBox = document.getElementById("popupBox");
+        if (popupBox.classList.contains("hidden")) {
+            popupBox.classList.remove("hidden");
+            popupBox.style.display = "block";
+        } else {
+            popupBox.classList.add("hidden");
+            popupBox.style.display = "none";
+        }
+    });
+</script>
+
+</body>
+</html>
